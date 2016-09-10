@@ -1,4 +1,4 @@
-package com.doberman.asouza.mvpdagger2;
+package com.doberman.asouza.mvpdagger2.view;
 
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+
+import com.doberman.asouza.mvpdagger2.R;
 
 public class MainActivity extends AppCompatActivity {
 
