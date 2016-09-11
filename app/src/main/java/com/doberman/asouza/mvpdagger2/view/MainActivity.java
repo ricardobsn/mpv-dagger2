@@ -14,9 +14,6 @@ import android.view.MenuItem;
 import com.doberman.asouza.mvpdagger2.App;
 import com.doberman.asouza.mvpdagger2.R;
 import com.doberman.asouza.mvpdagger2.contract.MainContract;
-import com.doberman.asouza.mvpdagger2.di.contract.DaggerMainPresenterComponent;
-import com.doberman.asouza.mvpdagger2.di.module.AppModule;
-import com.doberman.asouza.mvpdagger2.di.module.MainPresenterModule;
 import com.doberman.asouza.mvpdagger2.view.fragment.DetailedFragment;
 import com.doberman.asouza.mvpdagger2.view.fragment.SimpleFragment;
 
@@ -37,10 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerMainPresenterComponent.builder()
-                .appModule(new AppModule(getApplication()))
-                .mainPresenterModule(new MainPresenterModule()).build()
-                .inject(this);
+        ((App) getApplication()).getMainPresenterComponent().inject(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

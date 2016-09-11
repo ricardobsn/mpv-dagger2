@@ -48,10 +48,7 @@ public class DetailedFragment extends Fragment implements MainContract.View.Deta
 
         ButterKnife.bind(this, rootView);
 
-        DaggerMainPresenterComponent.builder()
-                .appModule(new AppModule(getActivity().getApplication()))
-                .mainPresenterModule(new MainPresenterModule()).build()
-                .inject(this);
+        ((App)getActivity().getApplication()).getMainPresenterComponent().inject(this);
 
         presenter.attachDetailedView(this);
 

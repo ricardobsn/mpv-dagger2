@@ -46,10 +46,7 @@ public class SimpleFragment extends Fragment implements MainContract.View.Simple
 
         ButterKnife.bind(this, rootView);
 
-        DaggerMainPresenterComponent.builder()
-                .appModule(new AppModule(getActivity().getApplication()))
-                .mainPresenterModule(new MainPresenterModule()).build()
-                .inject(this);
+        ((App)getActivity().getApplication()).getMainPresenterComponent().inject(this);
 
         presenter.attachSimpleView(this);
 
