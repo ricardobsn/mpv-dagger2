@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 /**
  * Created by asouza on 10/09/16.
  */
-public class DetailedFragment extends Fragment implements MainContract.View.DetailedView{
+public class SimpleFragment extends Fragment implements MainContract.View.SimpleView{
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -30,11 +30,11 @@ public class DetailedFragment extends Fragment implements MainContract.View.Deta
     @BindView(R.id.layout_item_loading)
     RelativeLayout layoutItemLoading;
 
-    public DetailedFragment(){
+    public SimpleFragment(){
     }
 
-    public static DetailedFragment newInstance(int sectionNumber) {
-        DetailedFragment fragment = new DetailedFragment();
+    public static SimpleFragment newInstance(int sectionNumber) {
+        SimpleFragment fragment = new SimpleFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -50,7 +50,7 @@ public class DetailedFragment extends Fragment implements MainContract.View.Deta
 
         ((App)getActivity().getApplication()).getAppComponent().inject(this);
 
-        presenter.attachDetailedView(this);
+        presenter.attachSimpleView(this);
 
         showWaitFeedbackOfViews();
 

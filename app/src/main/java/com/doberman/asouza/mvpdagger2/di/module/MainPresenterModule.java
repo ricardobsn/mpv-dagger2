@@ -4,6 +4,8 @@ import com.doberman.asouza.mvpdagger2.contract.MainContract;
 import com.doberman.asouza.mvpdagger2.di.scope.ScopeActivity;
 import com.doberman.asouza.mvpdagger2.presenter.MainPresenter;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -13,8 +15,8 @@ import dagger.Provides;
 @Module
 public class MainPresenterModule{
 
+    @Singleton
     @Provides
-    @ScopeActivity
     public MainContract.Presenter.MainPresenter providerMainPresenter(MainPresenter mainPresenter) {
         return mainPresenter;
     }

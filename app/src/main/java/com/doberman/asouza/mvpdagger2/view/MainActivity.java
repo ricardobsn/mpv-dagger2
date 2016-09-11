@@ -1,24 +1,21 @@
 package com.doberman.asouza.mvpdagger2.view;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.doberman.asouza.mvpdagger2.App;
 import com.doberman.asouza.mvpdagger2.R;
 import com.doberman.asouza.mvpdagger2.contract.MainContract;
-
-import com.doberman.asouza.mvpdagger2.di.contract.DaggerMainPresenterComponent;
-import com.doberman.asouza.mvpdagger2.di.module.MainPresenterModule;
 import com.doberman.asouza.mvpdagger2.view.fragment.DetailedFragment;
+import com.doberman.asouza.mvpdagger2.view.fragment.SimpleFragment;
 
 import javax.inject.Inject;
 
@@ -29,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private ViewPager mViewPager;
 
     @Inject
-    public  MainContract.Presenter.MainPresenter presenter;
+    public MainContract.Presenter.MainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerMainPresenterComponent.builder()
-                .mainPresenterModule(new MainPresenterModule()).build()
-                .inject(this);
+        ((App) getApplication()).getAppComponent().inject(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -51,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         tabLayout.setupWithViewPager(mViewPager);
 
         presenter.attachMainView(this);
-
+        presenter.loadStarterData();
     }
 
     @Override
@@ -79,12 +74,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         @Override
         public Fragment getItem(int position) {
-            if (position == 0){
-                DetailedFragment detailedFragment = DetailedFragment.newInstance(position + 1);
-                return detailedFragment;
-            }else if (position == 1) {
-                DetailedFragment detailedFragment = DetailedFragment.newInstance(position + 1);
-                return detailedFragment;
+            if (position == 0) {
+                return DetailedFragment.newInstance(position + 1);
+            } else if (position == 1) {
+                return SimpleFragment.newInstance(position + 1);
             } else {
                 return null;
             }

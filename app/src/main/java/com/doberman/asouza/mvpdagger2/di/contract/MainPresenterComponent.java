@@ -12,9 +12,7 @@ import dagger.Component;
 /**
  * Created by asouza on 10/09/16.
  */
-@ScopeActivity
+@Singleton
 @Component(modules = {MainPresenterModule.class})
 public interface MainPresenterComponent{
-    void inject(MainActivity activity);
-    void inject(DetailedFragment fragment);
 }

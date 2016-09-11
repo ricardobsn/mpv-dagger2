@@ -12,8 +12,6 @@ public interface MainContract {
 
         interface SimpleView {
 
-            void waitLoadStarterData();
-
             void notStarterDataFound();
 
             void errorWhileLoadData();
@@ -21,8 +19,6 @@ public interface MainContract {
         }
 
         interface DetailedView {
-
-            void waitLoadStarterData();
 
             void notStarterDataFound();
 
@@ -39,6 +35,9 @@ public interface MainContract {
             void attachMainView(MainContract.View.MainView mainView);
             void attachSimpleView(MainContract.View.SimpleView simpleView);
             void attachDetailedView(MainContract.View.DetailedView detailedView);
+
+            void loadStarterData();
+            void loadMoreData();
 
         }
 
