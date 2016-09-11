@@ -22,8 +22,6 @@ import butterknife.ButterKnife;
  */
 public class SimpleFragment extends Fragment implements MainContract.View.SimpleView{
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
     @Inject
     MainContract.Presenter.MainPresenter presenter;
 
@@ -33,11 +31,8 @@ public class SimpleFragment extends Fragment implements MainContract.View.Simple
     public SimpleFragment(){
     }
 
-    public static SimpleFragment newInstance(int sectionNumber) {
+    public static SimpleFragment newInstance() {
         SimpleFragment fragment = new SimpleFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
         return fragment;
     }
 

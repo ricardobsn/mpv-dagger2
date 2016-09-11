@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return DetailedFragment.newInstance(position + 1);
+                return DetailedFragment.newInstance();
             } else if (position == 1) {
-                return SimpleFragment.newInstance(position + 1);
+                return SimpleFragment.newInstance();
             } else {
                 return null;
             }

@@ -33,11 +33,8 @@ public class DetailedFragment extends Fragment implements MainContract.View.Deta
     public DetailedFragment(){
     }
 
-    public static DetailedFragment newInstance(int sectionNumber) {
+    public static DetailedFragment newInstance() {
         DetailedFragment fragment = new DetailedFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
         return fragment;
     }
 
