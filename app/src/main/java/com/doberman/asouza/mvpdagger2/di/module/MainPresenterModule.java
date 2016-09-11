@@ -15,8 +15,8 @@ import dagger.Provides;
 @Module
 public class MainPresenterModule{
 
-    @Singleton
     @Provides
+    @Singleton
     public MainContract.Presenter.MainPresenter providerMainPresenter(MainPresenter mainPresenter) {
         return mainPresenter;
     }

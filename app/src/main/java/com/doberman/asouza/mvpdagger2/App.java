@@ -2,8 +2,8 @@ package com.doberman.asouza.mvpdagger2;
 
 import android.app.Application;
 
-import com.doberman.asouza.mvpdagger2.di.contract.AppComponent;
-import com.doberman.asouza.mvpdagger2.di.contract.DaggerAppComponent;
+import com.doberman.asouza.mvpdagger2.di.contract.DaggerMainPresenterComponent;
+import com.doberman.asouza.mvpdagger2.di.contract.MainPresenterComponent;
 import com.doberman.asouza.mvpdagger2.di.module.AppModule;
 import com.doberman.asouza.mvpdagger2.di.module.MainPresenterModule;
 
@@ -12,19 +12,20 @@ import com.doberman.asouza.mvpdagger2.di.module.MainPresenterModule;
  */
 public class App extends Application {
 
-    private AppComponent appComponent;
+    private MainPresenterComponent mainPresenterComponent;
 
     @Override
     public void onCreate(){
         super.onCreate();
-        this.appComponent = DaggerAppComponent.builder()
+
+        this.mainPresenterComponent = DaggerMainPresenterComponent.builder()
                 .appModule(new AppModule(this))
                 .mainPresenterModule(new MainPresenterModule())
                 .build();
     }
 
-    public AppComponent getAppComponent(){
-        return appComponent;
+    public MainPresenterComponent getMainPresenterComponent() {
+        return mainPresenterComponent;
     }
 
 }
