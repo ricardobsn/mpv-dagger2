@@ -1,9 +1,6 @@
 package com.doberman.asouza.mvpdagger2.di.module;
 
 import com.doberman.asouza.mvpdagger2.model.contract.BookContract;
-import com.doberman.asouza.mvpdagger2.model.entity.Volumes;
-
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
