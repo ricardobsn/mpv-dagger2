@@ -10,13 +10,8 @@ import javax.inject.Inject;
  */
 public class BookService {
 
-/*
     @Inject
     BookContract bookContract;
-*/
-
-    @Inject
-    Volumes volumes;
 
     @Inject
     BookService(){

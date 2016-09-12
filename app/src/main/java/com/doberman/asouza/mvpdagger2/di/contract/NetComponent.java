@@ -13,5 +13,5 @@ import retrofit2.Retrofit;
  */
 @Component(modules = {NetModule.class})
 public interface NetComponent {
-    Retrofit provideRetrofit();
+    Retrofit retrofit();
 }
