@@ -9,7 +9,7 @@ import rx.Observable;
 /**
  * Created by asouza on 10/09/16.
  */
-public interface BookContract {
+public interface ApiBookContract {
     @GET("volumes")
     public Observable<Volumes> searchBook(@Query("q") String query,@Query("startIndex") Integer startIndex);
 }

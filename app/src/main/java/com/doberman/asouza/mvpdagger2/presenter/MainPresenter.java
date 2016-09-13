@@ -1,16 +1,9 @@
 package com.doberman.asouza.mvpdagger2.presenter;
 
 import com.doberman.asouza.mvpdagger2.contract.MainContract;
-import com.doberman.asouza.mvpdagger2.model.contract.BookContract;
 import com.doberman.asouza.mvpdagger2.model.service.BookService;
 
-import java.util.concurrent.Callable;
-
 import javax.inject.Inject;
-
-import retrofit2.Retrofit;
-import rx.Observable;
-import rx.functions.Action1;
 
 /**
  * Created by asouza on 10/09/16.

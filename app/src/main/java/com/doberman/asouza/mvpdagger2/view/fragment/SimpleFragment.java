@@ -10,9 +10,6 @@ import android.widget.RelativeLayout;
 import com.doberman.asouza.mvpdagger2.App;
 import com.doberman.asouza.mvpdagger2.R;
 import com.doberman.asouza.mvpdagger2.contract.MainContract;
-import com.doberman.asouza.mvpdagger2.di.contract.DaggerMainPresenterComponent;
-import com.doberman.asouza.mvpdagger2.di.module.AppModule;
-import com.doberman.asouza.mvpdagger2.di.module.MainPresenterModule;
 import com.doberman.asouza.mvpdagger2.util.LayoutUtil;
 
 import javax.inject.Inject;
